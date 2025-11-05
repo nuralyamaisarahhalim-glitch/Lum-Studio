@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumé Studio | Schedule</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #111;
+      color: #fff;
+      padding-top: 70px; /* space for fixed navbar */
+    }
+
+    /* Header Tabs */
+    .days {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .day {
+      margin: 5px 8px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      color: #fff;
+      border: 1px solid #444;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .day.active {
+      background-color: #288DC9;
+      border-color: #fff;
+    }
+
+    /* Schedule Table */
+    .schedule {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://i.pinimg.com/1200x/d7/14/e3/d714e35043612062b03be4171d756a5b.jpg') center/cover no-repeat;
+      padding: 80px 20px;
+      min-height: 400px;
+    }
+
+    .schedule table {
+      width: 90%;
+      max-width: 900px;
+      border-collapse: collapse;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: left;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .schedule th, .schedule td {
+      padding: 20px;
+      border-bottom: 1px solid #333;
+      color: #fff;
+    }
+
+    .schedule th {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .join-btn {
+      background-color: #60BDF0;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .join-btn:hover {
+      background-color: #288DC9;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a1a;
+      padding: 50px 10%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: #bbb;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 220px;
+      margin: 10px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section p, .footer-section li {
+      line-height: 1.8;
+      font-size: 0.95em;
+    }
+
+    .footer-section .contact {
+      margin-bottom: 10px;
+    }
+
+    .footer-section input[type=email] {
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      width: 80%;
+      margin-bottom: 10px;
+      outline: none;
+    }
+
+    .footer-section button {
+      padding: 10px 20px;
+      background-color: #60BDF0;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .footer-section img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .social {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #999;
+    }
+
+    .social i {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .social i:hover {
+      color: #f15a24;
+    }
+
+    @media(max-width: 768px) {
+      .schedule table {
+        width: 100%;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Lumé Studio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+         <li class="nav-item"><a class="nav-link" href="HOME PAGE.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="TRAINER PAGE.html">Trainers</a></li>
+        <li class="nav-item"><a class="nav-link active" href="SCHEDULE PAGE.html">Schedule</a></li>
+        <li class="nav-item"><a class="nav-link" href="REGISTRATION FORM PAGE.html">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Day Tabs -->
+<div class="days">
+  <div class="day active">MONDAY</div>
+  <div class="day">TUESDAY</div>
+  <div class="day">WEDNESDAY</div>
+  <div class="day">THURSDAY</div>
+  <div class="day">FRIDAY</div>
+  <div class="day">SATURDAY</div>
+  <div class="day">SUNDAY</div>
+</div>
+
+<!-- Schedule Section -->
+<div class="schedule">
+  <table>
+    <tr>
+      <th>Class</th>
+      <th>Time</th>
+      <th>Trainer</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>GYM</td>
+      <td>12:00am - 2:00pm</td>
+      <td>Coach Aleeya</td>
+      <td><button class="join-btn">JOIN NOW</button></td>
+    </tr>
+    <tr>
+      <td>MEDITATION</td>
+      <td>1:30pm - 3:30pm</td>
+      <td>Coach Suhada</td>
+      <td><button class="join-btn">JOIN NOW</button></td>
+    </tr>
+    <tr>
+      <td>FITNESS</td>
+      <td>3:30pm - 5:30pm</td>
+      <td>Coach Ain</td>
+      <td><button class="join-btn">JOIN NOW</button></td>
+    </tr>
+    <tr>
+      <td>ZUMBA</td>
+      <td>8:00pm - 10:00pm</td>
+      <td>Coach Alya</td>
+      <td><button class="join-btn">JOIN NOW</button></td>
+    </tr>
+  </table>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-section">
+    <h3>LUMÉ Studio</h3>
+    <p>At Lumé Studio, we believe fitness is more than just movement — it’s empowerment. Our certified personal trainers specialize in strength training, helping you build power, endurance, and confidence through customized programs designed for every level. Step into a space where dedication shines brighter than excuses.</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>CORPORATE OFFICE</h3>
+    <p class="contact">🏠 Lumé Studio, Cheras, Selangor, Malaysia - 43200</p>
+    <p class="contact">📞 01792353199 - 01954066456</p>
+    <p class="contact">📧 Lumé Studio@gmail.com</p>
+    <p class="contact">📠 +60 3-2785 1234</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>LUMÉ PHOTOS</h3>
+    <div>
+      <img src="https://i.pinimg.com/736x/db/42/7a/db427a0cf5026b9057161937d3d8e8e9.jpg" alt="">
+      <img src="https://i.pinimg.com/736x/17/cc/3f/17cc3ffd4f08aa104c1d4e04eb2a0f53.jpg" alt="">
+      <img src="https://i.pinimg.com/736x/a5/7e/2b/a57e2b3c71863e2bd09cd277fc050097.jpg" alt="">
+      <img src="https://i.pinimg.com/736x/d5/c0/f0/d5c0f0f69b06f97a4e23b0ee3e9a1378.jpg" alt="">
+      <img src="https://i.pinimg.com/736x/39/ea/c4/39eac4417fa1a02385c6afc3e77cecc3.jpg" alt="">
+      <img src="https://i.pinimg.com/736x/41/f3/b8/41f3b826f0e3efce5d0e0d1a387e6800.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="footer-section">
+    <h3>NEWS & EVENT</h3>
+    <p>Get informed about the latest news and our events.</p>
+    <input type="email" placeholder="Email">
+    <button>SEND NOW</button>
+
+
+  <div class="social">
+    <p>© 2025 Lumé Studio. All Right Reserved</p>
+  </div>
+
+</body>
+</html>
+
